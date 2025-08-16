@@ -37,7 +37,6 @@ dependencies:
   get: ^4.6.6
   shared_preferences: ^2.5.1
   flutter_screenutil: ^5.9.3
-  flutter_svg: ^2.0.17
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
   flutter_advanced_avatar: ^1.5.0
@@ -54,7 +53,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   country_picker: ^2.0.27
   path_provider: ^2.1.2
-
+  flutter_svg: ^2.2.0
+  page_transition: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -83,7 +83,7 @@ flutter:
      - assets/images/
      - assets/images/onboarding/
      - assets/icons/
-     - assets/fonts
+     - assets/fonts/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -100,18 +100,16 @@ flutter:
   fonts:
      - family: MontserratMedium
        fonts:
-         - asset: fonts/Montserrat-Medium.ttf
-
+         - asset: assets/fonts/Montserrat-Medium.ttf
 
      - family: MontserratSemiBold
        fonts:
-         - asset: fonts/Montserrat-SemiBold.ttf
-
+         - asset: assets/fonts/Montserrat-SemiBold.ttf
            weight: 600
 
      - family: MontserratRegular
        fonts:
-         - asset: fonts/Montserrat-Regular.ttf
+         - asset: assets/fonts/Montserrat-Regular.ttf
            weight: 400
   #
   # For details regarding fonts from package dependencies,

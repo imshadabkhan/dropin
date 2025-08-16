@@ -20,6 +20,9 @@ class ColorConstants {
   static var greenGradient1 = const Color(0xff26E138);
   static var greenGradient2 = const Color(0xff1CA92A);
   static var greenColor = const Color(0xff21C531);
+  static var greyTextColor = const Color(0xff727988);
+  static var circularIndexColor = const Color(0xff727988);
+
 }
 
 
