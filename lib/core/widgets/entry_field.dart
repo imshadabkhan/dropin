@@ -70,7 +70,7 @@ class EntryField extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Texts.textNormal(
-                    label!,size: 12,
+                    label!,size: 12,color: Colors.white
 
                   ),
                   if (trailingTitle != null)
@@ -111,7 +111,7 @@ alignment: Alignment.center,
                 : MaxLengthEnforcement.none,
             textAlign: textAlign ?? TextAlign.left,
             style: const TextStyle(
-                fontFamily: "Montserrat",
+                fontFamily: "MontserratRegular",
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
                 color: Colors.black),
@@ -130,19 +130,19 @@ filled: true,
                   ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(width: 17,height: 17,
-                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: Colors.black)),
+                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: Colors.white)),
                   )
                   : null,
               suffixIcon: InkWell(
                   onTap: onTrailingTap,
 
-                  child: Icon(suffixIcon,size: 17,color: Colors.black,)),
+                  child: Icon(suffixIcon,size: 17,color: Colors.white,)),
               hintText: hint,
               hintStyle: TextStyle(
-                  fontFamily: "Montserrat",
+                  fontFamily: "MontserratRegular",
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
-                  color:Colors.grey),
+                  color:Colors.white),
               counterStyle: const TextStyle(
                 height: double.minPositive,
               ),

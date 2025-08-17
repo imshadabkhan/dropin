@@ -1,6 +1,7 @@
 import 'package:dropin/core/constants/color_constants.dart';
 import 'package:dropin/core/widgets/custom_button.dart';
 import 'package:dropin/core/widgets/widgets.dart';
+import 'package:dropin/view/authentication/view/login_view.dart';
 import 'package:dropin/view/starting/onboarding/controller.dart';
 import 'package:dropin/view/starting/onboarding/model.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,9 @@ class BoardingView extends StatelessWidget {
 
                   // Login Button
                   CustomButton(
+                    onTap: (){
+                      Get.to(LoginView());
+                    },
                     label: "Login",
                     backgroundColor: ColorConstants.primaryColor,
                   ),
@@ -62,7 +66,9 @@ class BoardingView extends StatelessWidget {
                   // Skip
                   TextButton(
                     onPressed: () {
-                      // Handle skip
+
+                        Get.to(LoginView());
+
                     },
                     child: Texts.textMedium("Skip",
                         color: ColorConstants.greyTextColor, size: 14),

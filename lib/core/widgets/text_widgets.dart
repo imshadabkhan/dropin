@@ -17,19 +17,27 @@ class Texts {
     );
   }
 
+
   static textNormal(String label,
-      {double? size, Color? color, String? fontFamily, textAlign, overflow,  TextAlign? align}) {
+      {double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration,var maxlines}) {
     return AutoSizeText(
       label,
+      maxLines: maxlines,
       style: TextStyle(
+
+          decoration: decoration,
+          decorationColor: Colors.white,
           fontSize: size ?? 18.0,
           fontWeight: FontWeight.w400,
           fontFamily: "MontserratRegular",
           color: color ?? Colors.black,
           overflow: overflow),
       textAlign: textAlign ?? TextAlign.center,
+
     );
   }
+
+
 
   static textMedium(String label,
       {double? size, Color? color, String? fontFamily, fontWeight,TextAlign? textAlign}) {
@@ -62,25 +70,32 @@ class Texts {
 
   static textBlock(String label,
       {double? size,
-      Color? color,
-      FontWeight? fontWeight,
-      String? fontFamily,
-      var overflow,
-      int? maxline,
-      var align}) {
+        Color? color,
+        FontWeight? fontWeight,
+        String? fontFamily,
+        var overflow,
+        int? maxline,
+        var align,
+        var decoration
+      }) {
     return AutoSizeText(
       label,
       style: TextStyle(
-          fontSize: size ?? 18.0,
-          fontFamily: fontFamily ?? "MontserratRegular",
-          fontWeight: fontWeight ?? FontWeight.bold,
+        decoration: decoration,
+decorationColor: Colors.white,
+        fontSize: size ?? 18.0,
+        fontFamily: fontFamily ?? "MontserratRegular",
+        fontWeight: fontWeight ?? FontWeight.bold,
 
-          color: color ?? Colors.black),
+        color: color ?? Colors.black,
+
+      ),
       overflow: overflow ?? TextOverflow.ellipsis,
       textAlign: align ?? TextAlign.start,
       maxLines: maxline ?? 1,
     );
   }
+
 
   static textUnderlineBlock(String label,
       {double? size,
