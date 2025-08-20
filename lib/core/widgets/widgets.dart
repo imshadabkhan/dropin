@@ -1,5 +1,11 @@
+import 'package:dropin/core/constants/assets_constants.dart';
+import 'package:dropin/core/constants/color_constants.dart';
+import 'package:dropin/core/widgets/custom_button.dart';
+import 'package:dropin/core/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class Widgets{
 
@@ -32,4 +38,57 @@ static var widthSpaceW3 = SizedBox(
 );
 static var widthSpaceW4 = SizedBox(
   width: 0.04.sw,
-);}
+);
+
+static void showPopup(BuildContext context) {
+  showDialog(
+    context: context,
+    barrierDismissible: false, // User must press button
+    builder: (context) {
+      return Dialog(backgroundColor: ColorConstants.whiteColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              /// SVG image
+              SvgPicture.asset(
+                Asset.popup_Image,
+                height: 120,
+              ),
+              Widgets.heightSpaceH1,
+              Texts.textBold("Are You a Business Owner?", size: 18),
+
+              Widgets.heightSpaceH1,
+              Texts.textNormal(
+                "Add your business to be seen on DropIn!",
+                size: 14,
+                color: Colors.black54,
+
+              ),
+
+              Widgets.heightSpaceH1,
+
+              CustomButton(
+                icon:Image.asset(Asset.addBusinessIcon,height: 14,width: 14,),
+
+                label: "Add Business",
+                backgroundColor: ColorConstants.primaryColor,
+                textColor: ColorConstants.whiteColor,
+                onTap: () {
+                  Get.back(); // close popup
+                },
+              )
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+
+}

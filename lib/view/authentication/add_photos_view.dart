@@ -1,5 +1,6 @@
 import 'package:dropin/core/constants/padding_constants.dart';
 import 'package:dropin/core/widgets/widgets.dart';
+import 'package:dropin/view/post_signup_intro/post_signup_intro_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,8 @@ class AddPhotosView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
           Positioned.fill(
@@ -25,124 +28,133 @@ class AddPhotosView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+    
+          Positioned.fill(
+            child: Container(
+              color: Colors.black.withOpacity(0.4), // adjust as needed
+            ),
+          ),
+          Positioned.fill(
+            child: SafeArea(
+              child: SingleChildScrollView(
+                padding: PaddingConstants.screenPaddingHalf.copyWith(
+                  bottom: MediaQuery.of(context).viewInsets.bottom + 20.h,),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Widgets.heightSpaceH3,
+                    Texts.textBold("Add Photos",
+                  size: 18,
+                        color: Colors.white,
+                        ),
 
-          SafeArea(
-            child: Padding(
-              padding:PaddingConstants.screenPaddingHalf,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Widgets.heightSpaceH3,
-                  Texts.textBold("Add Photos",
-size: 18,
-                      color: Colors.white,
-                      ),
+                 Widgets.heightSpaceH3,
 
-               Widgets.heightSpaceH3,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Texts.textMedium("Upload Images",
+                          color: Colors.white, size: 14.sp),
+                    ),
+                    Widgets.heightSpaceH05,
+                    DottedBorder(
+                      color: Colors.white54,
+                      strokeWidth: 1,
+                      dashPattern: [6, 4], // [dash length, space length]
+                      borderType: BorderType.RRect,
+                      radius: Radius.circular(10),
+                      child: Container(
+                        width: double.infinity,
+                        height: 160.h,
+                        decoration: BoxDecoration(
 
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Texts.textMedium("Upload Images",
-                        color: Colors.white, size: 14.sp),
-                  ),
-                  Widgets.heightSpaceH05,
-                  DottedBorder(
-                    color: Colors.white54,
-                    strokeWidth: 1,
-                    dashPattern: [6, 4], // [dash length, space length]
-                    borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    child: Container(
-                      width: double.infinity,
-                      height: 160.h,
-                      decoration: BoxDecoration(
-
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 24.r,
-                              child: Image.asset(
-                                Asset.addImgIcon,
-                                color: ColorConstants.primaryColor,
-                                colorBlendMode: BlendMode.srcIn,
-                                height: 20,
-                                width: 20,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                radius: 24.r,
+                                child: Image.asset(
+                                  Asset.addImgIcon,
+                                  color: ColorConstants.primaryColor,
+                                  colorBlendMode: BlendMode.srcIn,
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            ),
-                            SizedBox(height: 8.h),
-                            Texts.textNormal("Upload Photos",
-                                color: Colors.white, size: 14.sp)
-                          ],
+                              SizedBox(height: 8.h),
+                              Texts.textNormal("Upload Photos",
+                                  color: Colors.white, size: 14.sp)
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
 
-                  Widgets.heightSpaceH3,
+                    Widgets.heightSpaceH3,
 
 
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Texts.textMedium("Tell people who you are (BIO)",
-                        color: Colors.white, size: 14.sp),
-                  ),
-                  Widgets.heightSpaceH05,
-                  Container(
-                    padding: EdgeInsets.all(10.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.white54, width: 1),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Texts.textMedium("Tell people who you are (BIO)",
+                          color: Colors.white, size: 14.sp),
                     ),
-                    child: TextField(
-                      controller: bioController,
-                      maxLength: 160,
-                      maxLines: 5,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        hintText: "Write here...",
-                        hintStyle:
-                        TextStyle(color: Colors.white54, fontSize: 13.sp),
-                        border: InputBorder.none,
-                        counterStyle: TextStyle(color: Colors.white70),
+                    Widgets.heightSpaceH05,
+                    Container(
+                      padding: EdgeInsets.all(10.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.white54, width: 1),
+                      ),
+                      child: TextField(
+                        controller: bioController,
+                        maxLength: 160,
+                        maxLines: 5,
+                        style: TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          hintText: "Write here...",
+                          hintStyle:
+                          TextStyle(color: Colors.white54, fontSize: 13.sp),
+                          border: InputBorder.none,
+                          counterStyle: TextStyle(color: Colors.white70),
+                        ),
                       ),
                     ),
-                  ),
 
-                  Widgets.heightSpaceH5,
-                  Widgets.heightSpaceH2,
-                  // 🔸 Finish Button
-                  CustomButton(
-                    label: "Finish",
-                    radius: 10,
-                    backgroundColor: ColorConstants.primaryColor,
-                    textColor: Colors.white,
-                    onTap: () {
-                      // Handle finish
-                    },
-                  ),
-                  Widgets.heightSpaceH2,
+                    Widgets.heightSpaceH5,
+                    Widgets.heightSpaceH2,
+                    // 🔸 Finish Button
+                    CustomButton(
+                      label: "Finish",
+                      radius: 10,
+                      backgroundColor: ColorConstants.primaryColor,
+                      textColor: Colors.white,
+                      onTap: () {
+                        Get.to(PostSingupView());
+                        // Handle finish
+                      },
+                    ),
+                    Widgets.heightSpaceH2,
 
-                  // 🔸 Back Button
-                  CustomButton(
-                    label: "Back",
-                    radius: 10,
-                    backgroundColor: Colors.transparent,
-                    borderColor: Colors.white,
-                    textColor: Colors.white,
-                    onTap: () {
-                      Get.back();
-                    },
-                  ),
-                ],
+                    // 🔸 Back Button
+                    CustomButton(
+                      label: "Back",
+                      radius: 10,
+                      backgroundColor: Colors.transparent,
+                      borderColor: Colors.white,
+                      textColor: Colors.white,
+                      onTap: () {
+                        Get.back();
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+
+          )],
       ),
     );
   }

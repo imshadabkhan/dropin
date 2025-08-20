@@ -1,5 +1,11 @@
+import 'package:dropin/core/constants/assets_constants.dart';
+import 'package:dropin/core/constants/color_constants.dart';
 import 'package:dropin/core/constants/padding_constants.dart';
 import 'package:dropin/core/utils/utils.dart';
+import 'package:dropin/core/widgets/custom_button.dart';
+import 'package:dropin/core/widgets/entry_field.dart';
+import 'package:dropin/core/widgets/text_widgets.dart';
+import 'package:dropin/core/widgets/widgets.dart';
 import 'package:dropin/view/authentication/controller/auth_controller.dart';
 import 'package:dropin/view/authentication/view/email_verification_view.dart';
 import 'package:dropin/view/authentication/view/login_view.dart';
@@ -10,13 +16,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 
-import '../../../../core/constants/assets_constants.dart';
-import '../../../../core/constants/color_constants.dart';
-import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/entry_field.dart';
-
-import '../../../../core/widgets/text_widgets.dart';
-import '../../../../core/widgets/widgets.dart';
 
 class SignUpView extends StatelessWidget {
   final AuthenticationController authenticationController =
@@ -122,7 +121,7 @@ class SignUpView extends StatelessWidget {
             fillColor: Colors.transparent,
             controller: passwordController,
             // prefixIcon: Assets.lockIcon,
-            hint: "********",
+                hint: "Type your password",
             obscureText: authenticationController.obscured.value,
 
                 suffixIcon: authenticationController.obscured.value == false

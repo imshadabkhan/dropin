@@ -57,11 +57,13 @@ class _VerificationViewState extends State<VerificationView> {
                 fit: BoxFit.cover,
               ),
             ),
+
             Positioned.fill(
               child: Container(
-                color: Colors.black.withOpacity(0.2), // adjust as needed
+                color: Colors.black.withOpacity(0.4), // adjust as needed
               ),
             ),
+
             Padding(
               padding: PaddingConstants.screenPaddingHalf,
               child: Column(

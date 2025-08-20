@@ -12,6 +12,7 @@ class EntryField extends StatelessWidget {
   final Color? fillColor;
   final TextEditingController? controller;
   final String? initialValue;
+  final Color? textColor;
   final bool? readOnly;
   final TextAlign? textAlign;
   final IconData? suffixIcon;
@@ -37,6 +38,7 @@ class EntryField extends StatelessWidget {
     this.hint,
     this.prefixIcon,this.onTap,
     this.color,
+    this.textColor,
     this.controller,
     this.initialValue,
     this.readOnly,
@@ -110,11 +112,11 @@ alignment: Alignment.center,
                 ? MaxLengthEnforcement.enforced
                 : MaxLengthEnforcement.none,
             textAlign: textAlign ?? TextAlign.left,
-            style: const TextStyle(
+            style:  TextStyle(
                 fontFamily: "MontserratRegular",
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
-                color: Colors.black),
+                color:textColor ?? Colors.black),
             keyboardType: textInputType,
             decoration: InputDecoration(
 

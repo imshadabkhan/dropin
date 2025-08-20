@@ -1,5 +1,11 @@
+import 'package:dropin/core/constants/assets_constants.dart';
+import 'package:dropin/core/constants/color_constants.dart';
 import 'package:dropin/core/constants/padding_constants.dart';
 import 'package:dropin/core/utils/utils.dart';
+import 'package:dropin/core/widgets/custom_button.dart';
+import 'package:dropin/core/widgets/entry_field.dart';
+import 'package:dropin/core/widgets/text_widgets.dart';
+import 'package:dropin/core/widgets/widgets.dart';
 import 'package:dropin/view/authentication/controller/auth_controller.dart';
 import 'package:dropin/view/authentication/view/forgot_password_view.dart';
 import 'package:dropin/view/authentication/view/registration_view.dart';
@@ -11,13 +17,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 
-import '../../../../core/constants/assets_constants.dart';
-import '../../../../core/constants/color_constants.dart';
-import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/entry_field.dart';
 
-import '../../../../core/widgets/text_widgets.dart';
-import '../../../../core/widgets/widgets.dart';
 
 class LoginView extends StatelessWidget {
   final AuthenticationController authenticationController =

@@ -1,3 +1,4 @@
+import 'package:dropin/view/post_signup_intro/post_signup_intro_view.dart';
 import 'package:dropin/view/profile/profile_setup_view.dart';
 import 'package:dropin/view/authentication/view/email_verification_view.dart';
 import 'package:dropin/view/authentication/view/forgot_password_view.dart';
